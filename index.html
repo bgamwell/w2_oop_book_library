@@ -17,28 +17,10 @@
 	<div class="margin-top-20">
 		<a href="#" data-toggle="modal" data-target="#add-book-modal" class="btn btn-primary">Add New Book</a>
 	</div>
-	<!--One Book-->
-	<div class="row margin-top-20 book-container">
-		<div class="col-sm-3">
-			<img src="https://s3-us-west-2.amazonaws.com/sandboxapi/to_kill_a_mockingbird.jpg" class="img-responsive" />
-		</div>
-		<div class="col-sm-9">
-			<div class="margin-top-20">
-				<span class="bold">Title: </span><span>To Kill a Mockingbird</span>
-			</div>
-			<div>
-				<span class="bold">Author: </span><span>Harper Lee</span>
-			</div>
-			<div>
-				<span class="bold">Release Date: </span><span>July 11, 1960</span>
-			</div>
-			<div class="margin-top-20">
-				<a href="#" class="btn btn-default">Edit Book</a>
-			</div>
-		</div>
+
+	<!-- Where template will be inserted on the page -->
+  <div id="where">
 	</div>
-	<!--/One Book-->
-</div>
 
 <!--Add Book Modal-->
 <div id="add-book-modal" class="modal fade">
@@ -93,6 +75,28 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 <script src="app.js"></script>
+
+<script type="text/template" id="template source">
+  <div class="row margin-top-20 book-container">
+	  <div class="col-sm-3">
+		  <img src=<% image %> class="img-responsive" />
+	</div>
+	  <div class="col-sm-9">
+		  <div class="margin-top-20">
+			  <span class="bold">Title: </span><span><% Title %></span>
+		  </div>
+		  <div>
+			  <span class="bold">Author: </span><span><% Author %></span>
+		  </div>
+		  <div>
+			  <span class="bold">Release Date: </span><span><% release_date %></span>
+		  </div>
+		  <div class="margin-top-20">
+			  <a href="#" class="btn btn-default">Edit Book</a>
+		  </div>
+	  </div>
+  </div>
+</script>
 
 </body>
 </html>
